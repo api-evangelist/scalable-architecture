@@ -13,9 +13,9 @@ apis:
     humanURL: https://architecture.example.com/load-balancer
     baseURL: https://api.architecture.example.com/v1/loadbalancer
     tags:
-      - Load Balancing
-      - Infrastructure
       - High Availability
+      - Infrastructure
+      - Load Balancing
       - Traffic Management
     properties:
       - type: Documentation
@@ -37,8 +37,8 @@ apis:
     tags:
       - Auto Scaling
       - Elasticity
-      - Resource Management
       - Performance
+      - Resource Management
     properties:
       - type: Documentation
         url: https://docs.architecture.example.com/auto-scaling
@@ -59,10 +59,10 @@ apis:
     baseURL: https://api.architecture.example.com/v1/cache
     tags:
       - Caching
+      - Data Access
+      - Memcached
       - Performance
       - Redis
-      - Memcached
-      - Data Access
     properties:
       - type: Documentation
         url: https://docs.architecture.example.com/caching
@@ -82,9 +82,9 @@ apis:
     humanURL: https://architecture.example.com/message-queue
     baseURL: https://api.architecture.example.com/v1/queue
     tags:
-      - Message Queue
       - Asynchronous Processing
       - Event-Driven
+      - Message Queue
       - Microservices
     properties:
       - type: Documentation
@@ -105,11 +105,11 @@ apis:
     humanURL: https://architecture.example.com/database-sharding
     baseURL: https://api.architecture.example.com/v1/sharding
     tags:
-      - Database
-      - Sharding
-      - Partitioning
       - Data Distribution
+      - Database
+      - Partitioning
       - Scalability
+      - Sharding
     properties:
       - type: Documentation
         url: https://docs.architecture.example.com/database-sharding
@@ -127,11 +127,11 @@ apis:
     humanURL: https://architecture.example.com/service-mesh
     baseURL: https://api.architecture.example.com/v1/servicemesh
     tags:
-      - Service Mesh
       - Microservices
       - Observability
-      - Traffic Management
       - Security
+      - Service Mesh
+      - Traffic Management
     properties:
       - type: Documentation
         url: https://docs.architecture.example.com/service-mesh
@@ -151,11 +151,11 @@ apis:
     humanURL: https://architecture.example.com/orchestration
     baseURL: https://api.architecture.example.com/v1/orchestration
     tags:
+      - Cloud Native
       - Containers
+      - Docker
       - Kubernetes
       - Orchestration
-      - Docker
-      - Cloud Native
     properties:
       - type: Documentation
         url: https://docs.architecture.example.com/orchestration
@@ -175,11 +175,11 @@ apis:
     humanURL: https://architecture.example.com/monitoring
     baseURL: https://api.architecture.example.com/v1/monitoring
     tags:
-      - Monitoring
-      - Metrics
-      - Observability
-      - Analytics
       - Alerting
+      - Analytics
+      - Metrics
+      - Monitoring
+      - Observability
     properties:
       - type: Documentation
         url: https://docs.architecture.example.com/monitoring
@@ -197,11 +197,11 @@ maintainers:
     email: architecture@example.com
     url: https://architecture.example.com/about
 tags:
-  - Scalability
-  - High Availability
-  - Distributed Systems
   - Cloud Architecture
+  - Distributed Systems
+  - High Availability
+  - Infrastructure
   - Microservices
   - Performance
-  - Infrastructure
+  - Scalability
 include: []
