@@ -1,0 +1,90 @@
+{
+  "name": "Microservice",
+  "description": "Hierarchical field structure for a microservice in a scalable distributed architecture, including service boundaries, API contract, dependencies, scaling, and resilience configurations.",
+  "fields": [
+    {"name": "name", "type": "string", "description": "Service name in kebab-case.", "required": true},
+    {"name": "version", "type": "string", "description": "Semantic version (e.g., 1.2.3).", "required": true},
+    {"name": "description", "type": "string", "description": "Bounded context and responsibilities.", "required": false},
+    {"name": "team", "type": "string", "description": "Owning team name.", "required": false},
+    {"name": "domain", "type": "string", "description": "Domain bounded context.", "required": false},
+    {
+      "name": "api",
+      "type": "object",
+      "description": "API contract definition.",
+      "required": true,
+      "fields": [
+        {"name": "protocol", "type": "string", "description": "HTTP/REST, gRPC, GraphQL, Kafka, etc.", "required": true},
+        {"name": "version", "type": "string", "description": "API version (v1, v2...).", "required": false},
+        {"name": "baseUrl", "type": "string", "description": "Base URL for the service.", "required": false},
+        {"name": "healthEndpoint", "type": "string", "description": "Liveness/readiness probe path.", "required": false},
+        {"name": "metricsEndpoint", "type": "string", "description": "Prometheus metrics scrape path.", "required": false}
+      ]
+    },
+    {
+      "name": "dependencies",
+      "type": "array",
+      "description": "Upstream service dependencies.",
+      "required": false,
+      "items": {
+        "fields": [
+          {"name": "name", "type": "string", "description": "Dependent service name.", "required": true},
+          {"name": "type", "type": "string", "description": "synchronous, asynchronous, database, cache, queue.", "required": true},
+          {"name": "required", "type": "boolean", "description": "Whether failure is fatal.", "required": false},
+          {"name": "circuitBreaker", "type": "boolean", "description": "Circuit breaker applied.", "required": false}
+        ]
+      }
+    },
+    {
+      "name": "resources",
+      "type": "object",
+      "description": "CPU/memory resource requests and limits.",
+      "required": false,
+      "fields": [
+        {"name": "requests", "type": "object", "description": "Minimum resources guaranteed.", "fields": [
+          {"name": "cpu", "type": "string", "description": "CPU in millicores (e.g., 100m)."},
+          {"name": "memory", "type": "string", "description": "Memory (e.g., 128Mi)."}
+        ]},
+        {"name": "limits", "type": "object", "description": "Maximum resources allowed.", "fields": [
+          {"name": "cpu", "type": "string"},
+          {"name": "memory", "type": "string"}
+        ]}
+      ]
+    },
+    {
+      "name": "scaling",
+      "type": "object",
+      "description": "Autoscaling configuration.",
+      "required": false,
+      "fields": [
+        {"name": "minReplicas", "type": "integer", "description": "Minimum pod replicas."},
+        {"name": "maxReplicas", "type": "integer", "description": "Maximum pod replicas."},
+        {"name": "targetCPUUtilizationPercentage", "type": "integer", "description": "HPA CPU target percentage."},
+        {"name": "scaleToZero", "type": "boolean", "description": "Allow scale-to-zero via KEDA."},
+        {"name": "scalingTrigger", "type": "string", "description": "Trigger type driving autoscaling."}
+      ]
+    },
+    {
+      "name": "resilience",
+      "type": "object",
+      "description": "Resilience pattern configurations.",
+      "required": false,
+      "fields": [
+        {"name": "circuitBreaker", "type": "object", "description": "Circuit breaker settings."},
+        {"name": "retry", "type": "object", "description": "Retry with backoff settings."},
+        {"name": "timeout", "type": "object", "description": "Request and connection timeouts."}
+      ]
+    },
+    {
+      "name": "observability",
+      "type": "object",
+      "description": "Observability instrumentation configuration.",
+      "required": false,
+      "fields": [
+        {"name": "tracingEnabled", "type": "boolean"},
+        {"name": "metricsEnabled", "type": "boolean"},
+        {"name": "loggingLevel", "type": "string", "description": "DEBUG, INFO, WARN, ERROR."},
+        {"name": "samplingRate", "type": "number", "description": "Distributed trace sampling rate 0.0-1.0."}
+      ]
+    }
+  ]
+}

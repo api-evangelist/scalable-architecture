@@ -1,0 +1,275 @@
+name: Scalable Architecture Vocabulary
+description: >-
+  Normative vocabulary for the scalable architecture topic domain, covering key
+  patterns, principles, technologies, and concepts used in designing and operating
+  distributed systems that scale reliably. Includes microservices, service mesh,
+  event-driven architecture, resilience patterns, and observability.
+created: '2026-05-02'
+modified: '2026-05-02'
+tags:
+  - Cloud Architecture
+  - Distributed Systems
+  - Microservices
+  - Resilience
+  - Scalability
+  - Service Mesh
+
+terms:
+
+  - term: Microservices Architecture
+    definition: >-
+      An architectural style that structures an application as a collection of small,
+      independently deployable services, each running in its own process and communicating
+      via well-defined APIs. Each service is responsible for a specific bounded context
+      and can be developed, deployed, and scaled independently.
+    synonyms:
+      - Microservices
+    related:
+      - Bounded Context
+      - Service Mesh
+      - API Gateway
+
+  - term: Bounded Context
+    definition: >-
+      A Domain-Driven Design (DDD) concept defining an explicit boundary within which
+      a particular domain model applies. Each microservice typically owns one bounded
+      context, preventing the confusion that arises when the same term has different
+      meanings in different parts of the system.
+    related:
+      - Domain-Driven Design
+      - Microservices Architecture
+      - Ubiquitous Language
+
+  - term: Service Mesh
+    definition: >-
+      A dedicated infrastructure layer for handling service-to-service communication,
+      providing features like mTLS encryption, traffic management, circuit breaking,
+      retries, load balancing, and distributed tracing—all without requiring changes
+      to application code. Istio, Linkerd, and Consul Connect are prominent implementations.
+    related:
+      - Istio
+      - Linkerd
+      - Envoy
+      - mTLS
+      - Sidecar Proxy
+
+  - term: Sidecar Proxy
+    definition: >-
+      A container deployed alongside each service instance that intercepts all inbound
+      and outbound traffic to implement service mesh features. Envoy is the most widely
+      used sidecar proxy.
+    related:
+      - Service Mesh
+      - Envoy
+      - Istio
+
+  - term: mTLS
+    definition: >-
+      Mutual Transport Layer Security. A protocol where both the client and server
+      authenticate each other using certificates. Service meshes use mTLS to provide
+      zero-trust networking—every service-to-service call is authenticated and encrypted.
+    acronym: mTLS
+    fullName: Mutual Transport Layer Security
+    related:
+      - Service Mesh
+      - Zero Trust
+
+  - term: Event-Driven Architecture
+    definition: >-
+      An architectural pattern where services communicate by producing and consuming
+      events via a message broker or event streaming platform. Enables loose coupling,
+      high scalability, and temporal decoupling between producers and consumers.
+    related:
+      - Apache Kafka
+      - RabbitMQ
+      - CQRS
+      - Event Sourcing
+
+  - term: CQRS
+    definition: >-
+      Command Query Responsibility Segregation. A pattern that separates the read
+      (query) and write (command) models of a service, allowing each to be independently
+      scaled and optimized. Often used together with Event Sourcing.
+    acronym: CQRS
+    fullName: Command Query Responsibility Segregation
+    related:
+      - Event Sourcing
+      - Event-Driven Architecture
+
+  - term: Event Sourcing
+    definition: >-
+      A pattern where state changes are stored as an ordered sequence of immutable
+      events rather than mutable rows in a database. The current state is derived by
+      replaying events. Provides a complete audit trail and enables temporal queries.
+    related:
+      - CQRS
+      - Event-Driven Architecture
+
+  - term: Saga Pattern
+    definition: >-
+      A pattern for managing distributed transactions across multiple microservices
+      without a distributed lock. Each service performs a local transaction and publishes
+      an event; the next service in the saga listens for the event and performs its
+      own transaction. On failure, compensating transactions undo previous steps.
+    related:
+      - Distributed Transactions
+      - Event-Driven Architecture
+
+  - term: API Gateway
+    definition: >-
+      A server that acts as the single entry point for clients, routing requests to
+      the appropriate microservices. Provides cross-cutting concerns like authentication,
+      rate limiting, request transformation, caching, and aggregation.
+    related:
+      - Microservices Architecture
+      - BFF Pattern
+      - Rate Limiting
+
+  - term: BFF Pattern
+    definition: >-
+      Backend for Frontend. An API Gateway variation where a dedicated backend service
+      is created for each type of frontend client (web, mobile, IoT), optimizing the
+      API for each client's specific needs.
+    acronym: BFF
+    fullName: Backend for Frontend
+    related:
+      - API Gateway
+      - Microservices Architecture
+
+  - term: Circuit Breaker
+    definition: >-
+      A resilience pattern that monitors calls to a downstream service and stops
+      forwarding requests when the failure rate exceeds a threshold, allowing the
+      failing service time to recover. After a cooldown period, the circuit transitions
+      to half-open and allows test requests through.
+    related:
+      - Bulkhead
+      - Retry
+      - Timeout
+      - Resilience
+
+  - term: Bulkhead
+    definition: >-
+      A resilience pattern that isolates elements of an application into pools so
+      that if one element fails, the others continue to function. Named after the
+      watertight compartments in a ship hull.
+    related:
+      - Circuit Breaker
+      - Resilience
+
+  - term: Retry with Exponential Backoff
+    definition: >-
+      A resilience strategy that retries failed requests with increasing wait times
+      between attempts (often with added random jitter) to avoid thundering herd
+      problems that arise when many clients retry simultaneously after a failure.
+    related:
+      - Circuit Breaker
+      - Resilience
+      - Thundering Herd
+
+  - term: Distributed Tracing
+    definition: >-
+      An observability technique that tracks requests as they propagate through
+      multiple services in a distributed system, capturing timing data and contextual
+      metadata to reconstruct end-to-end request paths. OpenTelemetry, Jaeger, and
+      Zipkin are common implementations.
+    related:
+      - OpenTelemetry
+      - Observability
+      - Span
+
+  - term: OpenTelemetry
+    definition: >-
+      A CNCF project providing vendor-neutral APIs, SDKs, and tooling for collecting
+      metrics, logs, and traces (the three pillars of observability) from distributed
+      systems. Widely adopted as the standard for instrumenting cloud-native applications.
+    related:
+      - Distributed Tracing
+      - Observability
+      - Metrics
+
+  - term: Service Discovery
+    definition: >-
+      The mechanism by which services locate each other in a dynamic environment
+      where instances come and go. In Kubernetes, the built-in Service resource and
+      DNS-based service discovery handle this automatically.
+    related:
+      - Microservices Architecture
+      - Kubernetes
+      - Load Balancing
+
+  - term: Immutable Infrastructure
+    definition: >-
+      A practice where infrastructure components are never modified after deployment.
+      Instead, new components are built (e.g., container images) and deployed to
+      replace the old ones. Simplifies rollbacks and ensures consistency.
+    related:
+      - GitOps
+      - Infrastructure as Code
+
+  - term: GitOps
+    definition: >-
+      An operational model where the desired state of infrastructure and applications
+      is declaratively defined in Git, and automated operators (like Argo CD or Flux)
+      continuously reconcile the running state with the desired state in Git.
+    related:
+      - Immutable Infrastructure
+      - Infrastructure as Code
+      - ArgoCD
+
+  - term: Service Level Objective (SLO)
+    definition: >-
+      A specific, measurable goal for service reliability, often expressed as a
+      percentage (e.g., "99.9% of requests will succeed") over a time window. SLOs
+      are the contractual backbone of reliability engineering in scalable architectures.
+    acronym: SLO
+    related:
+      - SLA
+      - Error Budget
+      - SRE
+
+  - term: Error Budget
+    definition: >-
+      The allowable amount of unreliability remaining within an SLO period. If 99.9%
+      uptime is the SLO, the error budget is 0.1% (about 44 minutes/month). Teams
+      track error budget burn rate to balance feature velocity against reliability.
+    related:
+      - SLO
+      - SRE
+
+categories:
+  - name: Architecture Patterns
+    terms:
+      - Microservices Architecture
+      - Bounded Context
+      - Event-Driven Architecture
+      - CQRS
+      - Event Sourcing
+      - Saga Pattern
+      - BFF Pattern
+
+  - name: Communication & Networking
+    terms:
+      - Service Mesh
+      - Sidecar Proxy
+      - mTLS
+      - API Gateway
+      - Service Discovery
+
+  - name: Resilience Patterns
+    terms:
+      - Circuit Breaker
+      - Bulkhead
+      - Retry with Exponential Backoff
+
+  - name: Observability
+    terms:
+      - Distributed Tracing
+      - OpenTelemetry
+
+  - name: Operational Practices
+    terms:
+      - Immutable Infrastructure
+      - GitOps
+      - Service Level Objective (SLO)
+      - Error Budget

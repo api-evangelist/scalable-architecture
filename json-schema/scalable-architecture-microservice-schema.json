@@ -1,0 +1,186 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/scalable-architecture/main/json-schema/scalable-architecture-microservice-schema.json",
+  "title": "Microservice",
+  "description": "Describes a microservice in a scalable architecture, including its service boundaries, communication contracts, resource requirements, and operational characteristics.",
+  "type": "object",
+  "required": ["name", "version", "api"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Service name in kebab-case.",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "version": {
+      "type": "string",
+      "description": "Semantic version of the service.",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(-[a-zA-Z0-9.]+)?$"
+    },
+    "description": {
+      "type": "string",
+      "description": "Human-readable description of the service's bounded context and responsibilities."
+    },
+    "team": {
+      "type": "string",
+      "description": "Team responsible for this service (follows domain-driven team ownership)."
+    },
+    "domain": {
+      "type": "string",
+      "description": "Domain or bounded context this service belongs to."
+    },
+    "api": {
+      "type": "object",
+      "description": "Service API contract definition.",
+      "required": ["protocol"],
+      "properties": {
+        "protocol": {
+          "type": "string",
+          "enum": ["HTTP/REST", "gRPC", "GraphQL", "WebSocket", "AMQP", "Kafka"],
+          "description": "Primary communication protocol."
+        },
+        "version": {
+          "type": "string",
+          "description": "API version (e.g., v1, v2).",
+          "default": "v1"
+        },
+        "baseUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Base URL for the service API."
+        },
+        "healthEndpoint": {
+          "type": "string",
+          "description": "Health check endpoint path.",
+          "default": "/health"
+        },
+        "metricsEndpoint": {
+          "type": "string",
+          "description": "Prometheus metrics endpoint path.",
+          "default": "/metrics"
+        }
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "description": "List of upstream services this service depends on.",
+      "items": {
+        "type": "object",
+        "required": ["name", "type"],
+        "properties": {
+          "name": {"type": "string"},
+          "type": {
+            "type": "string",
+            "enum": ["synchronous", "asynchronous", "database", "cache", "queue"]
+          },
+          "required": {"type": "boolean", "default": true},
+          "circuitBreaker": {"type": "boolean", "default": false}
+        }
+      }
+    },
+    "resources": {
+      "$ref": "#/$defs/ResourceRequirements"
+    },
+    "scaling": {
+      "$ref": "#/$defs/ScalingConfig"
+    },
+    "resilience": {
+      "$ref": "#/$defs/ResilienceConfig"
+    },
+    "observability": {
+      "$ref": "#/$defs/ObservabilityConfig"
+    },
+    "tags": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "$defs": {
+    "ResourceRequirements": {
+      "type": "object",
+      "description": "Kubernetes-style resource requests and limits.",
+      "properties": {
+        "requests": {
+          "type": "object",
+          "properties": {
+            "cpu": {"type": "string", "description": "CPU request (e.g., '100m', '0.5')."},
+            "memory": {"type": "string", "description": "Memory request (e.g., '128Mi', '1Gi')."}
+          }
+        },
+        "limits": {
+          "type": "object",
+          "properties": {
+            "cpu": {"type": "string"},
+            "memory": {"type": "string"}
+          }
+        }
+      }
+    },
+    "ScalingConfig": {
+      "type": "object",
+      "description": "Autoscaling configuration for the service.",
+      "properties": {
+        "minReplicas": {"type": "integer", "minimum": 0, "default": 1},
+        "maxReplicas": {"type": "integer", "minimum": 1},
+        "targetCPUUtilizationPercentage": {"type": "integer", "minimum": 1, "maximum": 100},
+        "scaleToZero": {"type": "boolean", "default": false},
+        "scalingTrigger": {
+          "type": "string",
+          "enum": ["cpu", "memory", "custom-metric", "queue-depth", "event-driven"]
+        }
+      }
+    },
+    "ResilienceConfig": {
+      "type": "object",
+      "description": "Resilience patterns applied to the service.",
+      "properties": {
+        "circuitBreaker": {
+          "type": "object",
+          "properties": {
+            "enabled": {"type": "boolean", "default": false},
+            "threshold": {"type": "number", "minimum": 0, "maximum": 1},
+            "timeout": {"type": "integer", "description": "Recovery timeout in seconds."}
+          }
+        },
+        "retry": {
+          "type": "object",
+          "properties": {
+            "enabled": {"type": "boolean", "default": false},
+            "maxAttempts": {"type": "integer", "minimum": 1, "default": 3},
+            "backoff": {
+              "type": "string",
+              "enum": ["fixed", "exponential", "jitter"],
+              "default": "exponential"
+            }
+          }
+        },
+        "timeout": {
+          "type": "object",
+          "properties": {
+            "requestTimeoutMs": {"type": "integer", "minimum": 0},
+            "connectionTimeoutMs": {"type": "integer", "minimum": 0}
+          }
+        }
+      }
+    },
+    "ObservabilityConfig": {
+      "type": "object",
+      "description": "Observability instrumentation settings.",
+      "properties": {
+        "tracingEnabled": {"type": "boolean", "default": true},
+        "metricsEnabled": {"type": "boolean", "default": true},
+        "loggingLevel": {
+          "type": "string",
+          "enum": ["DEBUG", "INFO", "WARN", "ERROR"],
+          "default": "INFO"
+        },
+        "samplingRate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Distributed trace sampling rate (0.0-1.0).",
+          "default": 0.1
+        }
+      }
+    }
+  }
+}

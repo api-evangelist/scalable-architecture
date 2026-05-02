@@ -1,0 +1,86 @@
+{
+  "name": "order-service",
+  "version": "2.4.1",
+  "description": "Manages the full order lifecycle for the e-commerce platform including creation, validation, payment coordination, and fulfillment tracking. Bounded context: Orders.",
+  "team": "commerce-platform",
+  "domain": "orders",
+  "api": {
+    "protocol": "HTTP/REST",
+    "version": "v2",
+    "baseUrl": "https://orders.internal.example.com/v2",
+    "healthEndpoint": "/health",
+    "metricsEndpoint": "/metrics"
+  },
+  "dependencies": [
+    {
+      "name": "payment-service",
+      "type": "synchronous",
+      "required": true,
+      "circuitBreaker": true
+    },
+    {
+      "name": "inventory-service",
+      "type": "synchronous",
+      "required": true,
+      "circuitBreaker": true
+    },
+    {
+      "name": "order-events",
+      "type": "asynchronous",
+      "required": false,
+      "circuitBreaker": false
+    },
+    {
+      "name": "orders-db",
+      "type": "database",
+      "required": true,
+      "circuitBreaker": false
+    },
+    {
+      "name": "session-cache",
+      "type": "cache",
+      "required": false,
+      "circuitBreaker": false
+    }
+  ],
+  "resources": {
+    "requests": {
+      "cpu": "200m",
+      "memory": "256Mi"
+    },
+    "limits": {
+      "cpu": "1000m",
+      "memory": "512Mi"
+    }
+  },
+  "scaling": {
+    "minReplicas": 2,
+    "maxReplicas": 20,
+    "targetCPUUtilizationPercentage": 70,
+    "scaleToZero": false,
+    "scalingTrigger": "cpu"
+  },
+  "resilience": {
+    "circuitBreaker": {
+      "enabled": true,
+      "threshold": 0.5,
+      "timeout": 30
+    },
+    "retry": {
+      "enabled": true,
+      "maxAttempts": 3,
+      "backoff": "exponential"
+    },
+    "timeout": {
+      "requestTimeoutMs": 5000,
+      "connectionTimeoutMs": 1000
+    }
+  },
+  "observability": {
+    "tracingEnabled": true,
+    "metricsEnabled": true,
+    "loggingLevel": "INFO",
+    "samplingRate": 0.05
+  },
+  "tags": ["commerce", "orders", "critical-path", "tier-1"]
+}

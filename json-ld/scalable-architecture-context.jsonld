@@ -1,0 +1,67 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "https://schema.org/",
+    "arch": "https://raw.githubusercontent.com/api-evangelist/scalable-architecture/main/json-ld/scalable-architecture-context.jsonld#",
+    "k8s": "https://kubernetes.io/ns/",
+    "cncf": "https://cncf.io/ns/",
+
+    "Microservice": {
+      "@id": "arch:Microservice",
+      "@type": "@id",
+      "comment": "An independently deployable service with a single bounded context and API contract."
+    },
+    "ServiceMesh": {
+      "@id": "arch:ServiceMesh",
+      "@type": "@id",
+      "comment": "Infrastructure layer for service-to-service communication with mTLS, observability, and traffic management."
+    },
+    "MessageBroker": {
+      "@id": "arch:MessageBroker",
+      "@type": "@id",
+      "comment": "A component that mediates asynchronous communication between services via message queues or event streams."
+    },
+    "EventStream": {
+      "@id": "arch:EventStream",
+      "@type": "@id",
+      "comment": "An ordered, durable log of events used for event sourcing and stream processing."
+    },
+    "ContainerOrchestrator": {
+      "@id": "arch:ContainerOrchestrator",
+      "@type": "@id",
+      "comment": "A system that automates deployment, scaling, and management of containerized workloads."
+    },
+    "WorkflowEngine": {
+      "@id": "arch:WorkflowEngine",
+      "@type": "@id",
+      "comment": "A system that orchestrates multi-step processes including parallel and conditional execution."
+    },
+    "Cache": {
+      "@id": "arch:Cache",
+      "@type": "@id",
+      "comment": "A high-speed data storage layer for reducing load on primary data stores."
+    },
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "domain": "arch:domain",
+    "team": "arch:team",
+    "api": "arch:api",
+    "protocol": "schema:protocol",
+    "dependencies": {
+      "@id": "arch:dependencies",
+      "@container": "@list"
+    },
+    "circuitBreaker": "arch:circuitBreaker",
+    "retry": "arch:retry",
+    "tracing": "arch:tracing",
+    "serviceMesh": "arch:serviceMesh",
+    "eventDriven": "arch:eventDriven",
+    "boundedContext": "arch:boundedContext",
+    "sagaPattern": "arch:sagaPattern",
+    "cqrs": "arch:cqrs",
+    "eventSourcing": "arch:eventSourcing",
+    "tags": "schema:keywords"
+  }
+}

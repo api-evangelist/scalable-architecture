@@ -1,155 +1,171 @@
-# Scalable Architecture APIs (scalable-architecture)
-A collection of APIs and services that support scalable system architecture
+# Scalable Architecture
 
-**URL:** [Visit APIs.json URL](https://architecture.example.com)
+A subject-matter collection covering APIs, patterns, tools, and frameworks for building scalable system architecture. This topic encompasses microservices design, service mesh, event-driven architecture, CQRS, saga patterns, container orchestration, caching, message queuing, and observability patterns for distributed systems.
 
-## Tags:
+**URL:** [https://raw.githubusercontent.com/api-evangelist/scalable-architecture/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/scalable-architecture/refs/heads/main/apis.yml)
 
- - Scalability, High Availability, Distributed Systems, Cloud Architecture, Microservices, Performance, Infrastructure
+## Tags
+
+Cloud Architecture, Cloud Native, Distributed Systems, High Availability, Infrastructure, Microservices, Performance, Resilience, Scalability, Service Mesh
 
 ## Timestamps
 
-- **Created:** 2024-01-15 
-- **Modified:** 2024-01-15 
+- **Created:** 2024-01-15
+- **Modified:** 2026-05-02
 
 ## APIs
 
-### Load Balancer API
-API for managing and configuring load balancers across infrastructure
+### Istio Service Mesh API
+Leading open-source service mesh providing traffic management, mTLS security, and observability for Kubernetes microservices. CNCF graduated project.
 
-**Human URL:** [https://architecture.example.com/load-balancer](https://architecture.example.com/load-balancer)
+**Human URL:** [https://istio.io/](https://istio.io/)
 
+#### Tags
 
-#### Tags:
-
- - Load Balancing, Infrastructure, High Availability, Traffic Management
-
-#### Properties
-
-- [Documentation](https://docs.architecture.example.com/load-balancer)
-- [OpenAPI](https://api.architecture.example.com/v1/loadbalancer/openapi.json)
-- [Authentication](https://docs.architecture.example.com/load-balancer/auth)
-
-### Auto Scaling API
-API for automated scaling of compute resources based on demand
-
-**Human URL:** [https://architecture.example.com/auto-scaling](https://architecture.example.com/auto-scaling)
-
-
-#### Tags:
-
- - Auto Scaling, Elasticity, Resource Management, Performance
+CNCF, Kubernetes, Microservices, Observability, Security, Service Mesh, Traffic Management
 
 #### Properties
 
-- [Documentation](https://docs.architecture.example.com/auto-scaling)
-- [OpenAPI](https://api.architecture.example.com/v1/autoscaling/openapi.json)
-- [Pricing](https://architecture.example.com/pricing/autoscaling)
-- [Status](https://status.architecture.example.com/autoscaling)
+- [Documentation](https://istio.io/latest/docs/)
+- [GitHub](https://github.com/istio/istio)
+- [Getting Started](https://istio.io/latest/docs/setup/getting-started/)
+- [Changelog](https://istio.io/latest/news/releases/)
 
-### Caching Service API
-Distributed caching API for high-performance data access
+### Linkerd API
+Lightweight, security-first service mesh for Kubernetes with automatic mTLS, golden metrics observability, and minimal operational complexity. CNCF graduated project.
 
-**Human URL:** [https://architecture.example.com/caching](https://architecture.example.com/caching)
+**Human URL:** [https://linkerd.io/](https://linkerd.io/)
 
+#### Tags
 
-#### Tags:
-
- - Caching, Performance, Redis, Memcached, Data Access
-
-#### Properties
-
-- [Documentation](https://docs.architecture.example.com/caching)
-- [OpenAPI](https://api.architecture.example.com/v1/cache/openapi.json)
-- [SDK](https://github.com/example/cache-sdk)
-- [Performance Metrics](https://architecture.example.com/metrics/cache)
-
-### Message Queue API
-Asynchronous message queuing service for decoupled architecture
-
-**Human URL:** [https://architecture.example.com/message-queue](https://architecture.example.com/message-queue)
-
-
-#### Tags:
-
- - Message Queue, Asynchronous Processing, Event-Driven, Microservices
+CNCF, Kubernetes, Microservices, mTLS, Observability, Security, Service Mesh
 
 #### Properties
 
-- [Documentation](https://docs.architecture.example.com/message-queue)
-- [OpenAPI](https://api.architecture.example.com/v1/queue/openapi.json)
-- [Webhooks](https://docs.architecture.example.com/message-queue/webhooks)
-- [Best Practices](https://docs.architecture.example.com/message-queue/best-practices)
+- [Documentation](https://linkerd.io/2.x/overview/)
+- [GitHub](https://github.com/linkerd/linkerd2)
+- [Getting Started](https://linkerd.io/2.x/getting-started/)
 
-### Database Sharding API
-API for managing database sharding and horizontal partitioning
+### Envoy Proxy Admin API
+High-performance edge and service proxy powering Istio, Linkerd, and most service meshes; Admin API for configuration, statistics, and cluster management. CNCF graduated project.
 
-**Human URL:** [https://architecture.example.com/database-sharding](https://architecture.example.com/database-sharding)
+**Human URL:** [https://www.envoyproxy.io/](https://www.envoyproxy.io/)
 
+#### Tags
 
-#### Tags:
-
- - Database, Sharding, Partitioning, Data Distribution, Scalability
+CNCF, Load Balancing, Open Source, Proxy, Service Mesh, Traffic Management
 
 #### Properties
 
-- [Documentation](https://docs.architecture.example.com/database-sharding)
-- [OpenAPI](https://api.architecture.example.com/v1/sharding/openapi.json)
-- [Migration Guide](https://docs.architecture.example.com/sharding/migration)
+- [Documentation](https://www.envoyproxy.io/docs/envoy/latest/operations/admin)
+- [GitHub](https://github.com/envoyproxy/envoy)
 
-### Service Mesh API
-Service mesh management for microservices communication and observability
+### Apache Kafka REST Proxy API
+RESTful interface to Apache Kafka for producing and consuming messages in event-driven scalable architectures. Core to distributed data pipelines.
 
-**Human URL:** [https://architecture.example.com/service-mesh](https://architecture.example.com/service-mesh)
+**Human URL:** [https://kafka.apache.org/](https://kafka.apache.org/)
 
+#### Tags
 
-#### Tags:
-
- - Service Mesh, Microservices, Observability, Traffic Management, Security
+Apache Kafka, Event Streaming, Event-Driven, Message Broker, Microservices, Pub-Sub
 
 #### Properties
 
-- [Documentation](https://docs.architecture.example.com/service-mesh)
-- [OpenAPI](https://api.architecture.example.com/v1/servicemesh/openapi.json)
-- [Monitoring](https://monitoring.architecture.example.com/servicemesh)
-- [Tracing](https://docs.architecture.example.com/service-mesh/tracing)
+- [Documentation](https://docs.confluent.io/platform/current/kafka-rest/api.html)
+- [GitHub](https://github.com/confluentinc/kafka-rest)
+- [OpenAPI](https://raw.githubusercontent.com/confluentinc/kafka-rest/master/api/v3/openapi.yaml)
 
-### Container Orchestration API
-API for managing containerized applications at scale
+### Redis REST API (Redis Stack)
+In-memory data structure store used as a cache, message broker, and streaming engine. REST API access via Redis Stack modules for JSON and search.
 
-**Human URL:** [https://architecture.example.com/orchestration](https://architecture.example.com/orchestration)
+**Human URL:** [https://redis.io/](https://redis.io/)
 
+#### Tags
 
-#### Tags:
-
- - Containers, Kubernetes, Orchestration, Docker, Cloud Native
+Caching, Data Store, In-Memory, Message Broker, Open Source, Pub-Sub, Redis
 
 #### Properties
 
-- [Documentation](https://docs.architecture.example.com/orchestration)
-- [OpenAPI](https://api.architecture.example.com/v1/orchestration/openapi.json)
-- [Helm Charts](https://charts.architecture.example.com)
-- [CLI Tools](https://github.com/example/orchestration-cli)
+- [Documentation](https://redis.io/docs/)
+- [GitHub](https://github.com/redis/redis)
+- [Pricing](https://redis.io/pricing/)
 
-### Metrics & Monitoring API
-Real-time metrics collection and monitoring for scalable systems
+### RabbitMQ Management HTTP API
+REST API for managing RabbitMQ exchanges, queues, bindings, users, and virtual hosts—critical for scalable event-driven microservice architectures.
 
-**Human URL:** [https://architecture.example.com/monitoring](https://architecture.example.com/monitoring)
+**Human URL:** [https://www.rabbitmq.com/](https://www.rabbitmq.com/)
 
+#### Tags
 
-#### Tags:
-
- - Monitoring, Metrics, Observability, Analytics, Alerting
+AMQP, Event-Driven, Message Broker, Microservices, Open Source, RabbitMQ
 
 #### Properties
 
-- [Documentation](https://docs.architecture.example.com/monitoring)
-- [OpenAPI](https://api.architecture.example.com/v1/monitoring/openapi.json)
-- [Dashboards](https://dashboards.architecture.example.com)
-- [Alerting Rules](https://docs.architecture.example.com/monitoring/alerts)
+- [Documentation](https://www.rabbitmq.com/management.html)
+- [GitHub](https://github.com/rabbitmq/rabbitmq-server)
+- [OpenAPI](https://raw.githubusercontent.com/rabbitmq/rabbitmq-server/main/deps/rabbitmq_management/priv/www/api/index.json)
+
+### Kubernetes API
+Foundation of cloud-native container orchestration; REST API for managing the full lifecycle of containerized workloads including Deployments, Services, HPA, and cluster state. CNCF graduated project.
+
+**Human URL:** [https://kubernetes.io/](https://kubernetes.io/)
+
+#### Tags
+
+CNCF, Cloud Native, Containers, Kubernetes, Orchestration, Open Source
+
+#### Properties
+
+- [Documentation](https://kubernetes.io/docs/reference/)
+- [GitHub](https://github.com/kubernetes/kubernetes)
+- [OpenAPI](https://raw.githubusercontent.com/kubernetes/kubernetes/master/api/openapi-spec/swagger.json)
+- [Getting Started](https://kubernetes.io/docs/tutorials/)
+
+### Argo Workflows API
+Kubernetes-native workflow engine for orchestrating parallel jobs used in scalable data pipelines, CI/CD, and ML workflows. CNCF graduated project.
+
+**Human URL:** [https://argoproj.github.io/argo-workflows/](https://argoproj.github.io/argo-workflows/)
+
+#### Tags
+
+CNCF, CI/CD, Kubernetes, Orchestration, Pipelines, Workflow
+
+#### Properties
+
+- [Documentation](https://argoproj.github.io/argo-workflows/)
+- [GitHub](https://github.com/argoproj/argo-workflows)
+- [OpenAPI](https://raw.githubusercontent.com/argoproj/argo-workflows/main/api/openapi-spec/swagger.json)
+
+## Schemas
+
+| Artifact | Description |
+|---|---|
+| [Microservice Schema](json-schema/scalable-architecture-microservice-schema.json) | JSON Schema for a microservice including API contract, dependencies, resource requirements, scaling config, and resilience settings. |
+
+## Structures
+
+| Artifact | Description |
+|---|---|
+| [Microservice Structure](json-structure/scalable-architecture-microservice-structure.json) | Hierarchical field documentation for microservice definitions in a scalable architecture. |
+
+## Linked Data
+
+| Artifact | Description |
+|---|---|
+| [Scalable Architecture Context](json-ld/scalable-architecture-context.jsonld) | JSON-LD context mapping architecture vocabulary to schema.org, Kubernetes, and CNCF namespaces. |
+
+## Examples
+
+| Artifact | Description |
+|---|---|
+| [Microservice Example](examples/scalable-architecture-microservice-example.json) | Example microservice definition for an order-service with circuit breaker, retry, HPA scaling, and full observability config. |
+
+## Vocabulary
+
+| Artifact | Description |
+|---|---|
+| [Scalable Architecture Vocabulary](vocabulary/scalable-architecture-vocabulary.yml) | Normative vocabulary covering microservices, service mesh, event-driven patterns, resilience, observability, and SRE concepts. |
 
 ## Maintainers
 
-**FN:** Architecture Team
-
-**Email:** architecture@example.com
+**API Evangelist** — [kin@apievangelist.com](mailto:kin@apievangelist.com) — [https://apievangelist.com](https://apievangelist.com)
