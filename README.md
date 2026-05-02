@@ -141,12 +141,14 @@ CNCF, CI/CD, Kubernetes, Orchestration, Pipelines, Workflow
 | Artifact | Description |
 |---|---|
 | [Microservice Schema](json-schema/scalable-architecture-microservice-schema.json) | JSON Schema for a microservice including API contract, dependencies, resource requirements, scaling config, and resilience settings. |
+| [Domain Event Schema](json-schema/scalable-architecture-event-schema.json) | CloudEvents-compliant JSON Schema for domain events enabling loose coupling across microservices via Kafka, RabbitMQ, and cloud message brokers. |
 
 ## Structures
 
 | Artifact | Description |
 |---|---|
 | [Microservice Structure](json-structure/scalable-architecture-microservice-structure.json) | Hierarchical field documentation for microservice definitions in a scalable architecture. |
+| [Domain Event Structure](json-structure/scalable-architecture-event-structure.json) | Hierarchical field documentation for CloudEvents-compliant domain events including partitioning, correlation, and dead letter metadata. |
 
 ## Linked Data
 
@@ -159,12 +161,19 @@ CNCF, CI/CD, Kubernetes, Orchestration, Pipelines, Workflow
 | Artifact | Description |
 |---|---|
 | [Microservice Example](examples/scalable-architecture-microservice-example.json) | Example microservice definition for an order-service with circuit breaker, retry, HPA scaling, and full observability config. |
+| [Domain Event Example](examples/scalable-architecture-event-example.json) | Example CloudEvents-compliant order.created domain event with correlation ID, partition key, and order payload for Kafka-based event streaming. |
 
 ## Vocabulary
 
 | Artifact | Description |
 |---|---|
 | [Scalable Architecture Vocabulary](vocabulary/scalable-architecture-vocabulary.yml) | Normative vocabulary covering microservices, service mesh, event-driven patterns, resilience, observability, and SRE concepts. |
+
+## Common Properties
+
+- [CNCF Landscape](https://landscape.cncf.io/)
+- [GitHub Organization](https://github.com/cncf)
+- [Blog](https://www.cncf.io/blog/)
 
 ## Maintainers
 

@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/scalable-architecture/main/json-schema/scalable-architecture-event-schema.json",
+  "title": "Domain Event",
+  "description": "Describes a domain event in an event-driven scalable architecture, following CloudEvents conventions. Domain events enable loose coupling between microservices through async message passing over Kafka, RabbitMQ, or cloud message brokers.",
+  "type": "object",
+  "required": ["id", "source", "specversion", "type"],
+  "properties": {
+    "specversion": {
+      "type": "string",
+      "description": "CloudEvents specification version.",
+      "const": "1.0"
+    },
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for this event occurrence.",
+      "format": "uuid",
+      "example": "96fb5f0b-001e-0108-6d02-a85e0000000"
+    },
+    "source": {
+      "type": "string",
+      "description": "URI identifying the context in which the event occurred (typically the originating service).",
+      "format": "uri",
+      "example": "/orders/service"
+    },
+    "type": {
+      "type": "string",
+      "description": "Event type in reverse-DNS notation describing the kind of occurrence.",
+      "pattern": "^[a-z][a-z0-9.]+$",
+      "examples": [
+        "com.example.orders.created",
+        "com.example.payments.completed",
+        "com.example.inventory.updated"
+      ]
+    },
+    "subject": {
+      "type": "string",
+      "description": "Identifies the subject of the event in the context of the source (e.g., entity ID).",
+      "example": "order-12345"
+    },
+    "datacontenttype": {
+      "type": "string",
+      "description": "Content type of the event data.",
+      "default": "application/json",
+      "examples": ["application/json", "application/avro"]
+    },
+    "dataschema": {
+      "type": "string",
+      "description": "URI identifying the schema for the event data payload.",
+      "format": "uri"
+    },
+    "time": {
+      "type": "string",
+      "description": "Timestamp of when the event occurred in RFC3339 format.",
+      "format": "date-time",
+      "example": "2026-05-02T14:30:00Z"
+    },
+    "data": {
+      "type": "object",
+      "description": "Domain event payload specific to the event type.",
+      "additionalProperties": true
+    },
+    "partitionkey": {
+      "type": "string",
+      "description": "Key used to route the event to a specific Kafka partition for ordering guarantees.",
+      "example": "customer-456"
+    },
+    "correlationid": {
+      "type": "string",
+      "description": "Correlation ID for tracing a business transaction across multiple services.",
+      "format": "uuid"
+    },
+    "causationid": {
+      "type": "string",
+      "description": "ID of the command or event that caused this event (event sourcing lineage).",
+      "format": "uuid"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional metadata properties for routing, filtering, and tracing.",
+      "properties": {
+        "retryCount": {
+          "type": "integer",
+          "description": "Number of times this event has been retried.",
+          "minimum": 0,
+          "default": 0
+        },
+        "deadLetterQueue": {
+          "type": "boolean",
+          "description": "Whether this event has been moved to the dead letter queue.",
+          "default": false
+        },
+        "version": {
+          "type": "integer",
+          "description": "Schema version for event evolution.",
+          "minimum": 1,
+          "default": 1
+        }
+      }
+    }
+  }
+}

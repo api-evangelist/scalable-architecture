@@ -1,0 +1,49 @@
+{
+  "specversion": "1.0",
+  "id": "96fb5f0b-001e-0108-6d02-a85e00000001",
+  "source": "/services/order-service",
+  "type": "com.example.orders.created",
+  "subject": "order-ORD-2026-87654",
+  "datacontenttype": "application/json",
+  "dataschema": "https://example.com/schemas/order-created/v1.json",
+  "time": "2026-05-02T14:30:00Z",
+  "partitionkey": "customer-456",
+  "correlationid": "7a9f3b2c-4d8e-11ee-be56-0242ac120002",
+  "causationid": "3c7f9b1a-4d8e-11ee-be56-0242ac120002",
+  "data": {
+    "orderId": "ORD-2026-87654",
+    "customerId": "customer-456",
+    "status": "created",
+    "items": [
+      {
+        "productId": "PROD-001",
+        "sku": "WIDGET-BLUE-L",
+        "quantity": 2,
+        "unitPrice": 29.99,
+        "currency": "USD"
+      },
+      {
+        "productId": "PROD-047",
+        "sku": "GADGET-RED-M",
+        "quantity": 1,
+        "unitPrice": 49.99,
+        "currency": "USD"
+      }
+    ],
+    "totalAmount": 109.97,
+    "currency": "USD",
+    "shippingAddress": {
+      "street": "123 Main Street",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94105",
+      "country": "US"
+    },
+    "createdAt": "2026-05-02T14:30:00Z"
+  },
+  "metadata": {
+    "retryCount": 0,
+    "deadLetterQueue": false,
+    "version": 1
+  }
+}

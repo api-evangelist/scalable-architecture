@@ -282,6 +282,14 @@ common:
     url: https://github.com/cncf
   - type: Blog
     url: https://www.cncf.io/blog/
+  - type: JSONSchema
+    url: https://raw.githubusercontent.com/api-evangelist/scalable-architecture/main/json-schema/scalable-architecture-microservice-schema.json
+  - type: JSONSchema
+    url: https://raw.githubusercontent.com/api-evangelist/scalable-architecture/main/json-schema/scalable-architecture-event-schema.json
+  - type: JSONLd
+    url: https://raw.githubusercontent.com/api-evangelist/scalable-architecture/main/json-ld/scalable-architecture-context.jsonld
+  - type: Vocabulary
+    url: https://raw.githubusercontent.com/api-evangelist/scalable-architecture/main/vocabulary/scalable-architecture-vocabulary.yml
 
 maintainers:
   - FN: API Evangelist
