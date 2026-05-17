@@ -48,9 +48,9 @@ apis:
         url: https://github.com/istio/istio
       - type: OpenAPI
         url: https://raw.githubusercontent.com/istio/api/master/networking/v1alpha3/virtual_service.proto
-      - type: Changelog
+      - type: ChangeLog
         url: https://istio.io/latest/news/releases/
-      - type: Getting Started
+      - type: GettingStarted
         url: https://istio.io/latest/docs/setup/getting-started/
     contact:
       - type: Slack
@@ -80,7 +80,7 @@ apis:
         url: https://linkerd.io/2.x/overview/
       - type: GitHub
         url: https://github.com/linkerd/linkerd2
-      - type: Getting Started
+      - type: GettingStarted
         url: https://linkerd.io/2.x/getting-started/
     contact:
       - type: Slack
@@ -140,7 +140,7 @@ apis:
         url: https://github.com/confluentinc/kafka-rest
       - type: OpenAPI
         url: https://raw.githubusercontent.com/confluentinc/kafka-rest/master/api/v3/openapi.yaml
-      - type: Getting Started
+      - type: GettingStarted
         url: https://kafka.apache.org/quickstart
     contact:
       - type: Community
@@ -170,7 +170,7 @@ apis:
         url: https://redis.io/docs/
       - type: GitHub
         url: https://github.com/redis/redis
-      - type: API Reference
+      - type: APIReference
         url: https://redis.io/docs/data-types/
       - type: Pricing
         url: https://redis.io/pricing/
@@ -203,7 +203,7 @@ apis:
         url: https://github.com/rabbitmq/rabbitmq-server
       - type: OpenAPI
         url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-server/main/deps/rabbitmq_management/priv/www/api/index.json
-      - type: Getting Started
+      - type: GettingStarted
         url: https://www.rabbitmq.com/tutorials
     contact:
       - type: Community
@@ -234,9 +234,9 @@ apis:
         url: https://github.com/kubernetes/kubernetes
       - type: OpenAPI
         url: https://raw.githubusercontent.com/kubernetes/kubernetes/master/api/openapi-spec/swagger.json
-      - type: Getting Started
+      - type: GettingStarted
         url: https://kubernetes.io/docs/tutorials/
-      - type: Changelog
+      - type: ChangeLog
         url: https://kubernetes.io/releases/
     contact:
       - type: Slack
@@ -267,7 +267,7 @@ apis:
         url: https://github.com/argoproj/argo-workflows
       - type: OpenAPI
         url: https://raw.githubusercontent.com/argoproj/argo-workflows/main/api/openapi-spec/swagger.json
-      - type: Getting Started
+      - type: GettingStarted
         url: https://argoproj.github.io/argo-workflows/quick-start/
     contact:
       - type: Slack
@@ -278,7 +278,7 @@ apis:
 common:
   - type: CNCF Landscape
     url: https://landscape.cncf.io/
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/cncf
   - type: Blog
     url: https://www.cncf.io/blog/
@@ -286,7 +286,7 @@ common:
     url: https://raw.githubusercontent.com/api-evangelist/scalable-architecture/main/json-schema/scalable-architecture-microservice-schema.json
   - type: JSONSchema
     url: https://raw.githubusercontent.com/api-evangelist/scalable-architecture/main/json-schema/scalable-architecture-event-schema.json
-  - type: JSONLd
+  - type: JSONLD
     url: https://raw.githubusercontent.com/api-evangelist/scalable-architecture/main/json-ld/scalable-architecture-context.jsonld
   - type: Vocabulary
     url: https://raw.githubusercontent.com/api-evangelist/scalable-architecture/main/vocabulary/scalable-architecture-vocabulary.yml
