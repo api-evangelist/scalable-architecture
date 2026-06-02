@@ -2,12 +2,20 @@
   "repo": "scalable-architecture",
   "feeds": [
     {
-      "source": "https://www.cncf.io/blog/",
+      "source": "https://www.cncf.io/blog/feed/",
       "feed_url": "https://www.cncf.io/blog/feed/",
-      "title": "Blog \u2013 Cloud Native Computing Foundation",
-      "saved": 5
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://github.com/cncf",
+      "feed_url": "https://github.com/cncf",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
-  "post_count": 20,
-  "fetched": "2026-05-17T20:20:35Z"
+  "post_count": 30,
+  "fetched": "2026-06-01T23:35:02Z"
 }
