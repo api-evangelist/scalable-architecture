@@ -5,7 +5,7 @@ description: >-
   service mesh, event-driven architecture, CQRS, saga patterns, container orchestration,
   caching, message queuing, and observability patterns that enable distributed systems
   to scale reliably.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/scalable-architecture/refs/heads/main/apis.yml
 created: '2024-01-15'
 modified: '2026-05-02'
