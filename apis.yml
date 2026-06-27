@@ -55,7 +55,7 @@ apis:
     contact:
       - type: Slack
         url: https://slack.istio.io/
-      - type: GitHub Issues
+      - type: GitHubIssues
         url: https://github.com/istio/istio/issues
 
   - name: Linkerd API
@@ -85,7 +85,7 @@ apis:
     contact:
       - type: Slack
         url: https://slack.linkerd.io/
-      - type: GitHub Issues
+      - type: GitHubIssues
         url: https://github.com/linkerd/linkerd2/issues
 
   - name: Envoy Proxy Admin API
@@ -114,7 +114,7 @@ apis:
     contact:
       - type: Slack
         url: https://envoyproxy.slack.com/
-      - type: GitHub Issues
+      - type: GitHubIssues
         url: https://github.com/envoyproxy/envoy/issues
 
   - name: Apache Kafka REST Proxy API
@@ -145,7 +145,7 @@ apis:
     contact:
       - type: Community
         url: https://kafka.apache.org/contact
-      - type: GitHub Issues
+      - type: GitHubIssues
         url: https://github.com/apache/kafka/issues
 
   - name: Redis REST API (Redis Stack)
@@ -177,7 +177,7 @@ apis:
     contact:
       - type: Community
         url: https://redis.io/community/
-      - type: GitHub Issues
+      - type: GitHubIssues
         url: https://github.com/redis/redis/issues
 
   - name: RabbitMQ Management HTTP API
@@ -208,7 +208,7 @@ apis:
     contact:
       - type: Community
         url: https://groups.google.com/g/rabbitmq-users
-      - type: GitHub Issues
+      - type: GitHubIssues
         url: https://github.com/rabbitmq/rabbitmq-server/issues
 
   - name: Kubernetes API
@@ -241,7 +241,7 @@ apis:
     contact:
       - type: Slack
         url: https://slack.k8s.io/
-      - type: GitHub Issues
+      - type: GitHubIssues
         url: https://github.com/kubernetes/kubernetes/issues
 
   - name: Argo Workflows API
@@ -272,7 +272,7 @@ apis:
     contact:
       - type: Slack
         url: https://cloud-native.slack.com/archives/C01LWLS5M2X
-      - type: GitHub Issues
+      - type: GitHubIssues
         url: https://github.com/argoproj/argo-workflows/issues
 
 common:
