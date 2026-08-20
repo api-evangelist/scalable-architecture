@@ -24,6 +24,17 @@ modified: '2026-05-02'
 specificationVersion: '0.23'
 tags:
   - Cloud Architecture
+  - Cloud-Native
+  - Distributed Systems
+  - High Availability
+  - Infrastructure
+  - Microservices
+  - Performance
+  - Resilience
+  - Scalability
+  - Service Mesh
+tags_raw:
+  - Cloud Architecture
   - Cloud Native
   - Distributed Systems
   - High Availability
@@ -112,6 +123,13 @@ apis:
     tags:
       - CNCF
       - Load Balancing
+      - Open-Source
+      - Proxy
+      - Service Mesh
+      - Traffic Management
+    tags_raw:
+      - CNCF
+      - Load Balancing
       - Open Source
       - Proxy
       - Service Mesh
@@ -171,6 +189,14 @@ apis:
     baseUrl: https://redis.example.com/redis
     tags:
       - Caching
+      - Datastore
+      - In-Memory
+      - Message Broker
+      - Open-Source
+      - Pub-Sub
+      - Redis
+    tags_raw:
+      - Caching
       - Data Store
       - In-Memory
       - Message Broker
@@ -206,6 +232,13 @@ apis:
       - Event-Driven
       - Message Broker
       - Microservices
+      - Open-Source
+      - RabbitMQ
+    tags_raw:
+      - AMQP
+      - Event-Driven
+      - Message Broker
+      - Microservices
       - Open Source
       - RabbitMQ
     properties:
@@ -233,6 +266,13 @@ apis:
     humanUrl: https://kubernetes.io/
     baseUrl: https://kubernetes.default.svc
     tags:
+      - CNCF
+      - Cloud-Native
+      - Containers
+      - Kubernetes
+      - Orchestration
+      - Open-Source
+    tags_raw:
       - CNCF
       - Cloud Native
       - Containers
@@ -266,6 +306,13 @@ apis:
     humanUrl: https://argoproj.github.io/argo-workflows/
     baseUrl: https://argo-server.example.com/api/v1
     tags:
+      - CNCF
+      - CI/CD
+      - Kubernetes
+      - Orchestration
+      - Pipelines
+      - Workflows
+    tags_raw:
       - CNCF
       - CI/CD
       - Kubernetes
