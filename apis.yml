@@ -200,7 +200,7 @@ apis:
     baseUrl: https://redis.example.com/redis
     tags:
       - Caching
-      - Data Store
+      - Datastore
       - In-Memory
       - Message Broker
       - Open-Source
