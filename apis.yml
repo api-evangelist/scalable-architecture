@@ -1,4 +1,5 @@
 name: Scalable Architecture
+kind: topic
 description: >-
   A subject-matter collection covering APIs, patterns, tools, and frameworks for
   building scalable system architecture. This topic encompasses microservices design,
@@ -7,14 +8,22 @@ description: >-
   to scale reliably.
 deliveryModel:
   model: saas
-  open_source: false
+  license_evidence:
+    not_product:
+    - argoproj/argo-workflows
+    - confluentinc/kafka-rest
+    - envoyproxy/envoy
+    - istio/istio
+    - kubernetes/kubernetes
+  open_source: unknown
   commercial: true
   callable_host: false
   label: Hosted service · you call their endpoint
-  confidence: medium
+  confidence: low
   source:
   - pricing
-  generated: '2026-08-28'
+  - repository-not-product
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: freemium
@@ -134,7 +143,7 @@ apis:
     tags:
       - CNCF
       - Load Balancing
-      - Open-Source
+      - Open Source
       - Proxy
       - Service Mesh
       - Traffic Management
@@ -145,6 +154,7 @@ apis:
       - Proxy
       - Service Mesh
       - Traffic Management
+      - Open-Source
     properties:
       - type: Documentation
         url: https://www.envoyproxy.io/docs/envoy/latest/operations/admin
@@ -203,7 +213,7 @@ apis:
       - Datastore
       - In-Memory
       - Message Broker
-      - Open-Source
+      - Open Source
       - Pub-Sub
       - Redis
     tags_raw:
@@ -214,6 +224,7 @@ apis:
       - Open Source
       - Pub-Sub
       - Redis
+      - Open-Source
     properties:
       - type: Documentation
         url: https://redis.io/docs/
@@ -243,7 +254,7 @@ apis:
       - Event-Driven
       - Message Broker
       - Microservices
-      - Open-Source
+      - Open Source
       - RabbitMQ
     tags_raw:
       - AMQP
@@ -252,6 +263,7 @@ apis:
       - Microservices
       - Open Source
       - RabbitMQ
+      - Open-Source
     properties:
       - type: Documentation
         url: https://www.rabbitmq.com/management.html
@@ -282,7 +294,7 @@ apis:
       - Containers
       - Kubernetes
       - Orchestration
-      - Open-Source
+      - Open Source
     tags_raw:
       - CNCF
       - Cloud Native
@@ -290,6 +302,7 @@ apis:
       - Kubernetes
       - Orchestration
       - Open Source
+      - Open-Source
     properties:
       - type: Documentation
         url: https://kubernetes.io/docs/reference/
