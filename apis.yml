@@ -359,6 +359,12 @@ apis:
         url: https://github.com/argoproj/argo-workflows/issues
 
 common:
+  - type: Plans
+    url: plans/scalable-architecture-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/scalable-architecture-rate-limits.yml
+  - type: FinOps
+    url: finops/scalable-architecture-finops.yml
   - type: CNCF Landscape
     url: https://landscape.cncf.io/
   - type: GitHubOrganization
