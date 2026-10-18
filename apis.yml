@@ -183,6 +183,13 @@ apis:
       - Event-Driven
       - Message Broker
       - Microservices
+      - Pub/Sub
+    tags_raw:
+      - Apache Kafka
+      - Event Streaming
+      - Event-Driven
+      - Message Broker
+      - Microservices
       - Pub-Sub
     properties:
       - type: Documentation
@@ -214,7 +221,7 @@ apis:
       - In-Memory
       - Message Broker
       - Open Source
-      - Pub-Sub
+      - Pub/Sub
       - Redis
     tags_raw:
       - Caching
